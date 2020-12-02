@@ -8,7 +8,7 @@ function Guarentor({ gid, setErrorMessage }) {
             if (gid !== "n/a" || null) {
                 const { data } = await axios.get(`/api/user/getuser/${gid}`)
                 if (data.success) {
-                    setGuarentor(data.user.fullname)
+                    setGuarentor(data?.user?.fullname)
                 } else {
                     setErrorMessage(data.message)
                 }
@@ -21,6 +21,20 @@ function Guarentor({ gid, setErrorMessage }) {
         getGuarentor()
     }, [getGuarentor])
     return <p>Loan guarentor: {guarentor}</p>
+}
+function Paidback({ audits }) {
+    const [paidback, setPaidback] = useState(null)
+    const getLoanPaidback = () => {
+        let totalaudited = 0;
+        audits?.map(aud => {
+            totalaudited += aud.amount
+        })
+        setPaidback(totalaudited)
+    }
+    useEffect(() => {
+        getLoanPaidback()
+    }, [])
+    return <p>Loan paid back: {paidback}</p>
 }
 export default function UserDash() {
     const { user } = useSelector((state) => state.auth);
@@ -56,11 +70,11 @@ export default function UserDash() {
                     <p className="mainbody__title">User Dasboard {errorMessage ? <>| {errorMessage}</> : null}</p>
                 </div>
                 <div className="user__info">
-                    <h1>{usr.fullname}</h1>
-                    <p>{usr.email}</p>
-                    <p>{usr.phone}</p>
-                    <p>{usr.position}{", " + usr.designation}</p>
-                    <p>{usr.detail}</p>
+                    <h1>{usr?.fullname}</h1>
+                    <p>{usr?.email}</p>
+                    <p>{usr?.phone}</p>
+                    <p>{usr?.position}{", " + usr?.designation}</p>
+                    <p>{usr?.detail}</p>
                 </div>
                 <div className="user__info">
                     <h2>User Loans</h2>
@@ -70,7 +84,7 @@ export default function UserDash() {
                             <p>Loan comment: {loan.loancomment}</p>
                             <p>Loan amount: {loan.loanamount}</p>
                             <Guarentor gid={loan.guarentorid} setErrorMessage={e => setErrorMessage(e)} />
-                            <p>Loan paid back: {loan.loanpaidback}</p>
+                            <Paidback audits={loan?.audits} />
                             <div>
                                 {loan.audits?.map((audit, id) => (
                                     <fieldset className="loancard__audits" key={id}>

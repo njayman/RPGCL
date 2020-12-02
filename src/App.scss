@@ -1,0 +1,344 @@
+#root {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  height: 100vh;
+}
+.navbar {
+  box-shadow: 3px 3px 3px grey;
+  min-width: 200px;
+  background: #070c47;
+  background: linear-gradient(169deg, #070c47 0%, #092579 58%, #00a9ff 100%);
+  margin: 1rem;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  &__logo {
+    font-size: 2rem;
+    color: white;
+  }
+  &__logo,
+  &__item {
+    padding: 1rem;
+    margin: 1rem 1rem 0 1rem;
+    color: white;
+    border: 3px solid transparent;
+  }
+  &__item__active,
+  &__item__active:hover {
+    background-color: #59c2ff;
+    color: black !important;
+    border-radius: 30px;
+  }
+  &__item:hover {
+    border-radius: 30px;
+    border: 3px solid #59c2ff;
+    color: #59c2ff;
+  }
+}
+
+.mainbody {
+  margin: 1rem 1rem 1rem 0;
+  width: 100%;
+  border-radius: 25px;
+  &__nav {
+    padding: 1rem;
+    border: 5px solid #59c2ff;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.user__profile {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: rgb(230, 255, 255);
+}
+
+.form__container {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  .form {
+    width: 600px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    &__section {
+      width: 300px;
+      margin: 20px;
+    }
+    &__control {
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+    }
+    &__control label {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    &__control input,
+    textarea {
+      border: 3px solid #cacaca;
+      border-radius: 20px;
+      display: block;
+      padding: 10px;
+      width: 100%;
+      outline: none;
+    }
+    &__control small {
+      color: rgb(255, 78, 78);
+    }
+    &__control input:focus,
+    textarea:focus {
+      border: 3px solid #59c2ff;
+    }
+    &__section fieldset {
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      border: 3px solid #cacaca;
+      border-radius: 20px;
+    }
+    &__section fieldset label {
+      text-align: left;
+      display: inline-block;
+    }
+  }
+}
+
+.loancontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+
+  #loanissued {
+    background: #38f066;
+  }
+
+  #loannotissued {
+    background: #e4e4e4;
+    .action__button {
+      background: #adadad;
+    }
+    .action__button:hover {
+      background: #59c2ff;
+    }
+  }
+}
+
+.loancontainer .user__loans {
+  margin: 0 20px 20px 0;
+  padding: 1rem;
+  border-radius: 25px;
+  width: 300px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.setting {
+  .setting__nav {
+    padding: 10px;
+    border: 5px solid #59c2ff;
+    border-radius: 25px;
+    margin-top: 25px;
+  }
+  fieldset {
+    padding: 10px;
+    border: 5px solid #59c2ff;
+    border-radius: 25px;
+    .loantypeform {
+      width: 300px;
+      &__control {
+        margin-bottom: 10px;
+      }
+      &__control label {
+        display: inline-block;
+        margin-bottom: 5px;
+      }
+      &__control input {
+        border: 3px solid #cacaca;
+        border-radius: 20px;
+        display: block;
+        padding: 5px;
+        width: 100%;
+        outline: none;
+      }
+      &__control small {
+        color: rgb(255, 78, 78);
+      }
+      &__control input:focus {
+        border: 3px solid #59c2ff;
+      }
+    }
+  }
+}
+
+.issueloan,
+.auditloan,
+.authform,
+.settingform {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  .form {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    &__control {
+      margin-bottom: 10px;
+      padding-bottom: 20px;
+    }
+    &__control label {
+      display: inline-block;
+      margin-bottom: 5px;
+    }
+    &__control input,
+    textarea,
+    select {
+      border: 3px solid #cacaca;
+      border-radius: 20px;
+      display: block;
+      padding: 10px;
+      width: 100%;
+      outline: none;
+    }
+    select {
+      margin-top: 10px;
+    }
+    option {
+      background: #cacaca;
+      border: none;
+      outline: none;
+      padding: 10px;
+    }
+    &__control small {
+      color: rgb(255, 78, 78);
+    }
+    &__control input:focus,
+    textarea:focus,
+    select:focus {
+      border: 3px solid #59c2ff;
+    }
+  }
+}
+
+.audits {
+  padding: 5px;
+  &__card {
+    padding: 20px;
+    background: #80d5ff;
+    border-radius: 25px;
+    margin: 10px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  &__card .card__id {
+    margin-right: 20px;
+    font-size: 20px;
+  }
+}
+
+.loantype__cards {
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  .loantype__card {
+    background: #80d5ff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 25px;
+  }
+}
+
+.authbody {
+  background-color: #070c47;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  &__nav {
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    background-color: #59c2ff;
+    border-radius: 25px;
+    margin-bottom: 40px;
+    &__button {
+      padding: 15px;
+      text-align: center;
+      width: 300px;
+      border: none;
+      font-weight: bold;
+      font-size: 22px;
+      background: #59c2ff;
+      border: 2px solid #59c2ff;
+      border-radius: 25px;
+      outline: none;
+    }
+    &__button:hover {
+      cursor: pointer;
+      background-color: #092579;
+      color: #e4e4e4;
+    }
+    .active {
+      background-color: #070c47;
+      color: #e4e4e4;
+    }
+  }
+  &__container {
+    overflow: auto;
+    max-height: 600px;
+    border-radius: 25px;
+  }
+  &__container .authform {
+    background: #e4e4e4;
+    width: 600px;
+    border-radius: 25px;
+  }
+}
+
+.user__info {
+  margin: 1rem 1rem 1rem 0;
+  width: 100%;
+  border-radius: 25px;
+  border: 2px solid #59c2ff;
+  padding: 10px;
+  .loancard {
+    padding: 20px;
+    &__audits {
+      padding: 10px;
+      border: 2px solid #00a9ff;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  .loancard:hover {
+    background: #dadada;
+    border-radius: 10px;
+  }
+}
+
+.admin__list {
+  margin: 1rem 1rem 1rem 0;
+  width: 100%;
+  border-radius: 25px;
+  border: 2px solid #59c2ff;
+  padding: 10px;
+  fieldset {
+    padding: 10px;
+    border: 2px solid #00a9ff;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+}

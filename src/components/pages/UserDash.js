@@ -24,16 +24,17 @@ function Guarentor({ gid, setErrorMessage }) {
 }
 function Paidback({ audits }) {
     const [paidback, setPaidback] = useState(null)
-    const getLoanPaidback = () => {
+    const getLoanPaidback = useCallback(() => {
         let totalaudited = 0;
         audits?.map(aud => {
             totalaudited += aud.amount
+            return 0;
         })
         setPaidback(totalaudited)
-    }
+    }, [audits])
     useEffect(() => {
         getLoanPaidback()
-    }, [])
+    }, [getLoanPaidback])
     return <p>Loan paid back: {paidback}</p>
 }
 export default function UserDash() {

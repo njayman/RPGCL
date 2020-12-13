@@ -14,6 +14,9 @@ import NavBar from './NavBar';
 import { useSelector } from "react-redux";
 import UserDash from '../pages/UserDash';
 import UserNavBar from './UserNavBar';
+import ViewLoan from '../pages/ViewLoan';
+import RequestLoan from '../pages/RequestLoan';
+import TestHomeLoan from '../pages/TestHomeLoan'
 
 export default function MainBody() {
     const { isAuthenticated, user } = useSelector((state) => state.auth);
@@ -39,7 +42,10 @@ export default function MainBody() {
                 <Fragment>
                     <UserNavBar />
                     <div className="mainbody">
-                        <Route exact path="/"><UserDash /> </Route>
+                        <Route exact path="/" component={UserDash} />
+                        <Route exact path="/viewloan/:id/:loanid" component={ViewLoan} />
+                        <Route exact path="/requestloan/:loanid" component={RequestLoan} />
+                        <Route exact path="/requesthomeloan" component={TestHomeLoan} />
                     </div>
                 </Fragment>
             )}

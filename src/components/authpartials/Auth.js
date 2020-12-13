@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import AdminForm from './AdminForm'
 import UserForm from './UserForm'
-import logo from '../../assets/rpgcl_logo.png'
+import logo from '../../assets/rpgcl_logo.webp'
 
 function Auth() {
     const [role, setRole] = useState('user')

@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux';
 import { NavLink, Link } from 'react-router-dom'
 import { logoutadmin } from '../../redux/actions/AuthActions';
-import logo from '../../assets/rpgcl_logo.png'
+import logo from '../../assets/rpgcl_logo.webp'
 
 export default function NavBar() {
     const dispatch = useDispatch()

@@ -11,6 +11,7 @@
 html,
 body {
   min-height: 100vh;
+  background: #d3d3d3;
 }
 
 a {
@@ -43,7 +44,8 @@ table {
   width: 100%;
   margin-top: 20px;
   border-collapse: collapse;
-  border-radius: 1em;
+  //border-radius: 1em;
+  box-shadow: 3px 3px 3px grey;
   border: 2px solid #59c2ff;
   overflow: hidden;
 }
@@ -65,4 +67,26 @@ tr:hover {
 .required::after {
   color: #ff4d4d;
   content: "*";
+}
+
+.form__control {
+  margin-bottom: 20px;
+  label {
+    margin-bottom: 5px;
+  }
+  input,
+  textarea {
+    border: 3px solid #cacaca;
+    border-radius: 20px;
+    padding: 5px;
+    width: 100%;
+    outline: none;
+  }
+  small {
+    color: rgb(255, 78, 78);
+  }
+  input:focus,
+  textarea:focus {
+    border: 3px solid #59c2ff;
+  }
 }
